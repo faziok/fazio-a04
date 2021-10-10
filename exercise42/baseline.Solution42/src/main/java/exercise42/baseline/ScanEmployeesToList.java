@@ -36,7 +36,7 @@ public class ScanEmployeesToList {
         while ((line = reader.readLine()) != null) {
             Map<String, String> employee = new LinkedHashMap<>();
             String[] values = line.split(",");
-            String[] keys = new String[]{"fName", "lName", "salary"};
+            String[] keys = new String[]{"lName", "fName", "salary"};
 
             for (int i = 0; i < values.length; i++) {
                 employee.put(keys[i], values[i]);
