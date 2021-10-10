@@ -45,14 +45,15 @@ public class Solution42 {
         BufferedReader reader1 = new BufferedReader(new FileReader("data/exercise42_input.txt"));
 
         //create object for reader
-        ScanEmployeesToList employeeList1 = new ScanEmployeesToList();
+        ScanEmployeesToList employeeList1 = new ScanEmployeesToList(reader1);
 
         //read in file to List of Maps
-        List<Map<String, String>> employeeList = new ArrayList<>();
+        List<Map<String, String>> employeeList = new ArrayList<>(employeeList1.scanInFile(reader1));
 
         //create object for printer
         PrintTable table1 = new PrintTable(employeeList);
 
-        //print table of employees\
+        //print table of employees
+        table1.printTheTable(employeeList);
     }
 }
