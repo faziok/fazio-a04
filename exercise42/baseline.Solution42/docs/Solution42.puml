@@ -1,0 +1,23 @@
+@startuml
+class Solution42{
+BufferReader reader
+List<Map<String, String>> employeeList
+printTable[] : table1
+
+}
+
+class PrintTable{
+List<Map<String, String>> employeeList
+printTable(employeeList)
+}
+
+class ScanEmployeesToList{
+BufferReader reader
+
+ScanInFile(reader)
+}
+
+Solution42 <|-- PrintTable
+Solution42 <|-- ScanEmployeesToList
+
+@enduml
