@@ -1,0 +1,20 @@
+@startuml
+
+class Solution41{
+Path filePath
+Scanner inputFile
+List<String> sortedNames
+
+scanInput() : Scanner
+printFile() : sortedNames
+}
+
+class SortList{
+List<String> namesList
+
+sortList()
+}
+
+Solution41 <|-- SortList
+
+@enduml
