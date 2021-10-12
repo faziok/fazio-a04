@@ -5,11 +5,7 @@ package exercise43.baseline;
  *  Copyright 2021 Keven Fazio
  */
 
-import javax.swing.text.html.CSS;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Solution43 {
@@ -50,71 +46,28 @@ public class Solution43 {
         String author = app.scanInput("Author: ");
 
         //prompt user "Do you want a folder for JavaScript?" and scan in input
-        boolean jsAnswer = app.checkYesOrNoAnswer("Do you want a folder for JavaScript? ");
+        boolean jsAnswer = app.checkYesOrNo(app.scanInput("Do you want a folder for JavaScript? "));
 
         //prompt user "Do you want a folder for CSS?" and scan in input
-        boolean cssAnswer = app.checkYesOrNoAnswer("Do you want a folder for CSS? ");
+        boolean cssAnswer = app.checkYesOrNo(app.scanInput("Do you want a folder for CSS? "));
 
-        //generate website directory and index.html file skeleton
-        app.createHTMLFile(siteName, author);
+        //create object to createStuff for directory, html file, and folders.
+        CreateStuff html = new CreateStuff();
 
-        //generate folders for JS and/or CSS if they want
-        app.createFolders(siteName, jsAnswer, cssAnswer);
+        //generate directory, html file, and folders if needed.
     }
 
     private String scanInput (String prompt){
+        //print prompt and scan in user input
         System.out.print(prompt);
         return input.nextLine();
     }
 
-    private boolean checkYesOrNoAnswer (String prompt){
+    public boolean checkYesOrNo (String userAnswer){
         //while answer is not y, n, yes, or no
         //prompt user "Please answer 'Y' or 'N'"
-        //scan input
-        System.out.print(prompt);
-        String answer = input.nextLine();
-        boolean yesOrNo = false;
-        while(!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("y")
-                && !answer.equalsIgnoreCase("no") && !answer.equalsIgnoreCase("n")){
-            answer = scanInput("Please answer 'Y' or 'N': ");
-        }
-        if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")){
-            yesOrNo = true;
-        }
-       return yesOrNo;
-    }
+        //scan input and check again
+        //return yesOrNo
 
-    private void createFolders (String siteName, boolean js, boolean css) throws IOException {
-        String created = "Created";
-
-        if (js){
-            Path pathJS = Paths.get(String.format("./data/%s/js", siteName));
-            Files.createDirectories(pathJS);
-            System.out.printf("%s %s%n", created, pathJS.subpath(0, 4));
-        }
-        if (css){
-            Path pathCSS = Paths.get(String.format("./data/%s/css", siteName));
-            Files.createDirectories(pathCSS);
-            System.out.printf("%s %s%n", created, pathCSS.subpath(0, 4));
-        }
-    }
-
-    private void createHTMLFile (String siteName, String author) throws IOException {
-        Path sitePath = Paths.get(String.format("./data/%s", siteName));
-        Files.createDirectories(sitePath);
-        System.out.printf("%nCreated %s%n", sitePath.subpath(0, 3));
-
-        try {
-            File file = new File(String.format("./data/%s/index.html", siteName));
-            String html = String.format("<!DOCTYPE html>%n<head>%n<title> %s </title>" +
-                    "%n<meta name=\"author\" content=\"%s\">%n</head>%n" +
-                    "<body><H1>HELLO, TO END OF THE WORLD!</H1></body>%n</html>", siteName, author );
-            PrintWriter writer = new PrintWriter(file);
-            writer.write(html);
-            writer.close();
-            System.out.printf("Created %s%n", file.getPath());
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 }
