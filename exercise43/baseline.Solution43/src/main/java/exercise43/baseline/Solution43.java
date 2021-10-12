@@ -55,6 +55,8 @@ public class Solution43 {
         CreateStuff html = new CreateStuff();
 
         //generate directory, html file, and folders if needed.
+        html.createHTMLFile(siteName, author);
+        html.createFolders(siteName, jsAnswer, cssAnswer);
     }
 
     private String scanInput (String prompt){
@@ -68,6 +70,15 @@ public class Solution43 {
         //prompt user "Please answer 'Y' or 'N'"
         //scan input and check again
         //return yesOrNo
-
+        String answer = userAnswer;
+        boolean yesOrNo = false;
+        while(!answer.equalsIgnoreCase("yes") && !answer.equalsIgnoreCase("y")
+                && !answer.equalsIgnoreCase("no") && !answer.equalsIgnoreCase("n")){
+            answer = scanInput("Please answer 'Y' or 'N': ");
+        }
+        if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")){
+            yesOrNo = true;
+        }
+        return yesOrNo;
     }
 }
