@@ -15,7 +15,7 @@ class SortListTest {
     List<String> expectedSorted = Arrays.asList("Johnson, Jim", "Jones, Aaron", "Jones, Chris",
             "Ling, Mai", "Swift, Geoffrey", "Xiong, Fong", "Zarnecki, Sabrina");
 
-    SortList list1 = new SortList(namesOriginal);
+    SortList list1 = new SortList();
 
 
     @Test

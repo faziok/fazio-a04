@@ -54,8 +54,8 @@ public class Solution41 {
         Scanner inputTxt = new Scanner(path);
         List<String> namesList = new ArrayList<>(app.scanInFile(inputTxt));
 
-        SortList list1 = new SortList(namesList);
-
+        //create object for sorting the list
+        SortList list1 = new SortList();
         //Get the list of sorted names
         List<String> sortedNamesList = new ArrayList<>(list1.getSortedList(namesList));
 
@@ -76,48 +76,30 @@ public class Solution41 {
         return namesFile;
     }
 
-    private void printToFile (List<String> output) throws IOException {
-        //create header for the file as a string
+    public void printToFile (List<String> output) throws IOException {
+        //try
+        //create String header for the file as a string
         //create a File object path for the output text
-        //if the output file doesn't exist, create it
-        //write header and sorted list to output file
-        //for the length of the list
-        //write string to file
+        //write header to file and sorted list to output file for the length of the list
         //print a message to console if it was written correctly
-
-        BufferedWriter buffWriter = null;
+        //close writer
 
         try {
             String header = "Total of " + output.size() + " names\n" + "-----------------\n";
             //Specify the file name and path here
             File file = new File("data/exercise41_output.txt");
 
-            //make sure that the file exists, if not it will create it.
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-
-            FileWriter fileWriter = new FileWriter(file);
-            buffWriter = new BufferedWriter(fileWriter);
-            buffWriter.write(header);
-
-            for (int i = 0; i < output.size(); i++){
-                buffWriter.write(output.get(i) + "\n");
+            PrintWriter pWriter = new PrintWriter(file);
+            pWriter.write(header);
+            for (String s : output) {
+                pWriter.write(s + "\n");
             }
 
             System.out.println("File written Successfully");
+            pWriter.close();
 
         } catch (IOException ioe) {
             ioe.printStackTrace();
-        }
-        finally
-        {
-            try{
-                if(buffWriter!=null)
-                    buffWriter.close();
-            }catch(Exception ex){
-                System.out.println("Error in closing the BufferedWriter"+ex);
-            }
         }
     }
 }

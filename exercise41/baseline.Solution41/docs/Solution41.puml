@@ -1,18 +1,18 @@
 @startuml
 
 class Solution41{
-Path filePath
-Scanner inputFile
-List<String> sortedNames
+    +Path path
+    +Scanner inputFile
+    +List<String> sortedNames
 
-scanInput() : Scanner
-printFile() : sortedNames
+
+    +main()
+    +scanInput(scanner) : namesList
+    +printFile(sortedNames)
 }
 
 class SortList{
-List<String> namesList
-
-sortList()
+    getSortedList(namesList) : sortedNames
 }
 
 Solution41 <|-- SortList

@@ -5,14 +5,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class SortList {
-    //declare namesList variable
-    List<String> namesList;
-
-    //constructor
-    SortList (List<String> namesList){
-        this.namesList = namesList;
-    }
-
     public List<String> getSortedList(List<String> namesList){
         //create new list to prevent modifying original list
         List<String> copyList = new ArrayList<>(namesList);
