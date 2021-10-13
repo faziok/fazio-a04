@@ -1,20 +1,16 @@
 @startuml
 class Solution42{
-BufferReader reader
-List<Map<String, String>> employeeList
-printTable[] : table1
-
+    +main()
+    +BufferReader reader
+    +List<Map<String, String>> employeeList
 }
 
 class PrintTable{
-List<Map<String, String>> employeeList
-printTable(employeeList)
+    +printTheTable(employeeList)
 }
 
 class ScanEmployeesToList{
-BufferReader reader
-
-ScanInFile(reader)
+    +ScanInFile(reader)
 }
 
 Solution42 <|-- PrintTable

@@ -39,20 +39,17 @@ public class Solution42 {
      * -Write your own code to parse the data. Don't use a CSV parser.
      */
 
-
     public static void main(String[] args) throws IOException {
         //read in file of employees
         BufferedReader reader1 = new BufferedReader(new FileReader("data/exercise42_input.txt"));
 
         //create object for reader
-        ScanEmployeesToList employeeList1 = new ScanEmployeesToList(reader1);
-
+        ScanEmployeesToList employeeList1 = new ScanEmployeesToList();
         //read in file to List of Maps
         List<Map<String, String>> employeeList = new ArrayList<>(employeeList1.scanInFile(reader1));
 
         //create object for printer
-        PrintTable table1 = new PrintTable(employeeList);
-
+        PrintTable table1 = new PrintTable();
         //print table of employees
         table1.printTheTable(employeeList);
     }

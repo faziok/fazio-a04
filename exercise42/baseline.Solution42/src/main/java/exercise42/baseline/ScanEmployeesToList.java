@@ -8,13 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 public class ScanEmployeesToList {
-    BufferedReader reader;
-
-    //constructor
-    ScanEmployeesToList (BufferedReader reader){
-        this.reader = reader;
-    }
-
     public List<Map<String, String>> scanInFile (BufferedReader reader) throws IOException {
         //initialize new employee list of employee maps
         List<Map<String, String>> employeeList = new ArrayList<>();

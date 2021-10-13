@@ -18,7 +18,7 @@ class ScanEmployeesToListTest {
     @Test
     void scanInFile() throws IOException {
         BufferedReader reader1 = new BufferedReader(new FileReader("data/exercise42_input.txt"));
-        ScanEmployeesToList employeeList1 = new ScanEmployeesToList(reader1);
+        ScanEmployeesToList employeeList1 = new ScanEmployeesToList();
 
         Map<String, String> employee1 = new LinkedHashMap<>();
         employee1.put("lName", "Ling");
@@ -66,6 +66,5 @@ class ScanEmployeesToListTest {
 
         assertTrue(employeeList.size() == employeeList1.scanInFile(reader1).size()
                 && employeeList.containsAll(employeeList1.scanInFile(reader1)));
-
     }
 }
