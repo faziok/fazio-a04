@@ -55,6 +55,7 @@ public class Solution43 {
         CreateStuff html = new CreateStuff();
 
         //generate directory, html file, and folders if needed.
+        html.createWebsiteDirectory(siteName);
         html.createHTMLFile(siteName, author);
         html.createFolders(siteName, jsAnswer, cssAnswer);
     }

@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 
 public class CreateStuff {
 
-    public void createHTMLFile(String siteName, String author) throws IOException {
+    public void createWebsiteDirectory (String siteName) throws IOException {
         //set path for the directory to be created
         Path sitePath = Paths.get(String.format("./data/%s", siteName));
 
@@ -19,7 +19,9 @@ public class CreateStuff {
 
         //print the relative path to the console
         System.out.printf("%nCreated %s%n", sitePath.subpath(0, 3));
+    }
 
+    public void createHTMLFile(String siteName, String author) throws IOException {
         try {
             //create file at location with the siteName
             File file = new File(String.format("./data/%s/index.html", siteName));
