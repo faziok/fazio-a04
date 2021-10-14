@@ -1,0 +1,7 @@
+{
+    "products" : [
+        {"Name": "Widget", "Price": 25.00, "Quantity": 5 },
+        {"Name": "Thing", "Price": 15.00, "Quantity": 5 },
+        {"Name": "Doodad", "Price": 5.00, "Quantity": 10 }
+    ]
+}
