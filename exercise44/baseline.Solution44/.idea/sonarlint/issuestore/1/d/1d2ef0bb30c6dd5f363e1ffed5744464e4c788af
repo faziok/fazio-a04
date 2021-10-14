@@ -1,0 +1,5 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(ßÓ˜‡8ñ‡ùçÇ/
+T	java:S1064"9Replace this use of System.out or System.err by a logger.(º§»8È°ÿçÇ/
+U	java:S1069"9Replace this use of System.out or System.err by a logger.(û¥²›8ñ£µèÇ/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Àå‚ı

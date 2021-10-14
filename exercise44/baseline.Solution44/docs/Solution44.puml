@@ -5,8 +5,8 @@ class Solution44{
 }
 
 class ProductSearch{
-    readJSON() : productsList
-    productSearch(searchName)
+    -readJSON() : productsList
+    +productSearch(searchName, productList)
 }
 
 Solution44 <|--ProductSearch

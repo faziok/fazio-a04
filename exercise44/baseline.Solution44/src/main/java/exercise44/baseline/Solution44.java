@@ -47,7 +47,9 @@ public class Solution44 {
         Solution44 app = new Solution44();
 
         ProductSearch ps = new ProductSearch();
+
         //print found product info that matched user response
+        ps.productSearch(app.scanInput()).forEach((key, value) -> System.out.println(key + ": " + value));
     }
 
     String scanInput(){
