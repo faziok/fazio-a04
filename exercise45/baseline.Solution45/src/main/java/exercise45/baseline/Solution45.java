@@ -42,10 +42,12 @@ public class Solution45 {
 
         //create object for ReplaceWord class
         ReplaceWord rw = new ReplaceWord();
+        
         //scan in input file content and then replace 'utilize' with 'use'
         //create a new string with replaced word
         //print new string to file using user fileName.
-        String newTxt;
+        String newTxt = rw.replaceWord(rw.scanInFile());
+        rw.printToFile(fileName, newTxt);
 
     }
 
