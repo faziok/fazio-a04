@@ -1,0 +1,14 @@
+@startuml
+class Solution45{
+    +main()
+    +scanInput() : fileName
+}
+
+class ReplaceWord{
+    +scanInFile() : oldTxt
+    +replaceWord(oldTxt) : newTxt
+    +printToFile(newTxt)
+}
+
+Solution45 <|-- ReplaceWord
+@enduml
