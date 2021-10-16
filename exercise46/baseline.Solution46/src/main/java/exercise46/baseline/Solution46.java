@@ -40,13 +40,17 @@ public class Solution46 {
         //scan in file to string
         String fileText = app.scanInFile();
 
+        //create object for Word Frequency Counter
+        WordFrequencyCounter wfc = new WordFrequencyCounter();
+
         //get Map of the words and their count
-        Map<String, Integer> wordCountMap = new LinkedHashMap<>();
+        Map<String, Integer> wordCountMap = new LinkedHashMap<>(wfc.getWordCount(fileText));
 
         //get a sorted Map of the words from the highest count to least
-        Map<String, Integer> sortedWordCountMap = new LinkedHashMap<>());
+        Map<String, Integer> sortedWordCountMap = new LinkedHashMap<>(wfc.getSortedMap(wordCountMap));
 
         //print histogram of the sorted Map.
+        wfc.printHistogram(sortedWordCountMap);
 
     }
 
@@ -55,11 +59,21 @@ public class Solution46 {
         Scanner sc = new Scanner(new File("data/exercise46_input.txt"));
 
         //create string to read in each line and string builder to put them together
+        String line = "";
+        StringBuilder sb = new StringBuilder();
 
         //while file has next word
         //scan line
         //append line to string builder
+        while (sc.hasNext()) {
+            line = sc.next();
+            sb.append(line).append(" ");
+        }
+
+        //close scanner
+        sc.close();
 
         //return string builder text as a string (trim to remove extra whitespace)
+        return sb.toString().trim();
     }
 }
