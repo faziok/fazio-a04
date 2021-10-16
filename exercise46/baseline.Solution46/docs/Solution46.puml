@@ -1,0 +1,17 @@
+@startuml
+class Solution46{
+    +main()
+        +String fileText
+        +Map wordCountMap
+        +Map sortedWordCountMap
+    +scanInFIle()
+}
+
+class WordFrequencyCounter{
+    +getWordCount(fileText) : wordCountMap
+    +getSortedMap(wordCountMap) : sortedWordCountMap
+    +printHistogram(sortedWordCountMap);
+}
+
+Solution46<|--WordFrequencyCounter
+@enduml
