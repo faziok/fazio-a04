@@ -38,6 +38,8 @@ public class ReplaceWord {
         //replace all words matching 'utilizes' with 'uses'
         newTxt = oldTxt.replaceAll("\\butilize\\b", "use");
         newTxt = newTxt.replaceAll("\\butilizes\\b", "uses");
+        newTxt = newTxt.replaceAll("\\bUtilize\\b", "Use");
+        newTxt = newTxt.replaceAll("\\bUtilizes\\b", "Uses");
 
         //return newTxt
         return newTxt;
