@@ -3,6 +3,8 @@ package exercise45.baseline;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ReplaceWord {
@@ -30,16 +32,12 @@ public class ReplaceWord {
         return sb.toString().trim();
     }
 
-    public String replaceWord (String oldTxt){
+    public String replaceWord (String oldTxt, String target, String replacement){
         //create newTxt instance variable
         String newTxt;
 
         //replace all words matching 'utilize' with 'use'
-        //replace all words matching 'utilizes' with 'uses'
-        newTxt = oldTxt.replaceAll("\\butilize\\b", "use");
-        newTxt = newTxt.replaceAll("\\butilizes\\b", "uses");
-        newTxt = newTxt.replaceAll("\\bUtilize\\b", "Use");
-        newTxt = newTxt.replaceAll("\\bUtilizes\\b", "Uses");
+        newTxt = oldTxt.replace("utilize", "use");
 
         //return newTxt
         return newTxt;

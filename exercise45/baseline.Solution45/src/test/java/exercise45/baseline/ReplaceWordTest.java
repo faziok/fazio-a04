@@ -9,6 +9,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ReplaceWordTest {
     ReplaceWord rw = new ReplaceWord();
+    String target = "utilize";
+    String replacement = "use";
 
     String oldTxt = "One should never utilize the word \"utilize\" in writing. Use \"use\" instead.\n" +
             "For example, \"She uses an IDE to write her Java programs\" instead of \"She\n" +
@@ -25,8 +27,7 @@ class ReplaceWordTest {
 
     @Test
     void replaceWord() {
-        assertEquals(newTxt, rw.replaceWord(oldTxt));
-
+        assertEquals(newTxt, rw.replaceWord(oldTxt, target, replacement));
     }
 
     @Test

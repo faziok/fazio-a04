@@ -37,6 +37,11 @@ public class Solution45 {
     public static void main(String[] args) throws IOException {
         Solution45 app = new Solution45();
 
+        //set target word to be replaced ignoring case sensitivity with pattern modifier
+        String target = "utilize";
+        //set word to replace target
+        String replacement = "use";
+
         //get output file name from user
         String fileName = app.scanInput();
 
@@ -46,7 +51,7 @@ public class Solution45 {
         //scan in input file content and then replace 'utilize' with 'use'
         //create a new string with replaced word
         //print new string to file using user fileName.
-        String newTxt = rw.replaceWord(rw.scanInFile());
+        String newTxt = rw.replaceWord(rw.scanInFile(), target, replacement);
         rw.printToFile(fileName, newTxt);
 
     }
