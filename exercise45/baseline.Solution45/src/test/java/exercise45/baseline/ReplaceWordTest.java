@@ -32,10 +32,10 @@ class ReplaceWordTest {
 
     @Test
     void printToFile() throws IOException {
-        rw.printToFile("exercise45_output", newTxt);
+        rw.printToFile("exercise45_output_TEST", newTxt);
 
         //test for js folder and delete
-        File file = new File ("./data/exercise45_output.txt");
+        File file = new File ("./data/exercise45_output_TEST.txt");
         assertTrue(file.exists());
         assertTrue(file.delete());
     }

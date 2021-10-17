@@ -3,8 +3,6 @@ package exercise45.baseline;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class ReplaceWord {
@@ -36,8 +34,25 @@ public class ReplaceWord {
         //create newTxt instance variable
         String newTxt;
 
-        //replace all words matching 'utilize' with 'use'
-        newTxt = oldTxt.replace("utilize", "use");
+        //get char array of the target and replacement word
+        char[] replacementArr = replacement.toCharArray();
+        char[] targetArr = target.toCharArray();
+
+        //change first letter of replacement word to uppercase
+        char replaceUpperCase = Character.toUpperCase(replacementArr[0]);
+        replacementArr[0] = replaceUpperCase;
+
+        //change first letter of target word to uppercase
+        char tarUpperCase = Character.toUpperCase(targetArr[0]);
+        targetArr[0] = tarUpperCase;
+
+        //convert arrays to string for uppercase target and replacement words
+        String replacementUpperCase = String.valueOf(replacementArr);
+        String targetUpperCase = String.valueOf(targetArr);
+
+        //replace all target words with replacement word even if capitalized
+        newTxt = oldTxt.replace(target, replacement);
+        newTxt = newTxt.replace(targetUpperCase, replacementUpperCase);
 
         //return newTxt
         return newTxt;
