@@ -1,5 +1,10 @@
 package exercise42.baseline;
 
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solutions
+ *  Copyright 2021 Keven Fazio
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;

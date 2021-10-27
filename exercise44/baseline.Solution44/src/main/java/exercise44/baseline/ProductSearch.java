@@ -1,5 +1,10 @@
 package exercise44.baseline;
 
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solutions
+ *  Copyright 2021 Keven Fazio
+ */
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
